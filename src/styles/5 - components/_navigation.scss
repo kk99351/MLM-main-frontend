@@ -1,0 +1,132 @@
+.navigation {
+  width: 100%;
+  height: 10rem;
+  background: $background-color;
+  display: flex;
+  align-items: center;
+  padding: .5rem 5rem;
+  padding-top: 3rem;
+  position: absolute;
+  top: 0;
+  transform: translateY(0);
+  z-index: map-get($z-index, navigation);
+  box-shadow: none;
+  @include bezier-transition(transform, .3s, ease);
+
+  @include tablet {
+    padding: .5rem 2rem;
+  }
+
+  @include mobile {
+    padding: 0 $s-size;
+    position: fixed;
+  }
+
+  .logo {
+    height: inherit;
+    margin-right: 2rem;
+  }
+
+  .logo img {
+    width: 18rem;
+    height: inherit;
+    object-fit: contain;
+  }
+
+  .logo a {
+    display: block;
+    height: 100%;
+  }
+
+  .searchbar {
+    width: 300px;
+  }
+}
+
+.navigation-admin {
+  height: 6rem;
+  background: $white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .05);
+  padding: .5rem $l-size;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.navigation-menu-main-mobile {
+  padding-left: 0;
+  margin-right: 2rem;
+  flex-grow: 1;
+
+  li {
+    display: block;
+
+    a {
+      display: block;
+      padding: 10px 15px;
+      font-size: 1.4rem;
+
+      &:hover {
+        background: $background-color-01;
+      }
+    }
+  }
+}
+
+
+.navigation-menu-main {
+  padding-left: 0;
+  margin-right: 2rem;
+  flex-grow: 1;
+
+  li {
+    display: inline-block;
+    
+    
+    a {
+      padding: 10px 15px;
+      font-size: 1.8rem;
+      
+      &:hover {
+        color: $main-color;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.navigation-menu-item {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation-action {
+  display: flex;
+  align-items: center;
+  margin-left: $xxl-size;
+}
+
+.navigation-menu-link {
+  color: $main-color;
+  padding: $xs-size $m-size;
+  text-decoration: none;
+  font-size: $font-medium;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+}
+
+.navigation-menu-active {
+  font-weight: bold;
+  opacity: 1 !important;
+}

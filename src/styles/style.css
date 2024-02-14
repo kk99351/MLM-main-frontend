@@ -1,0 +1,16 @@
+.carousel-status{
+  display: none;
+}
+::-webkit-scrollbar{
+  width: 8px
+}
+::-webkit-scrollbar-track{
+  background-color: #fafafa;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #616161;
+  border-radius: 15px;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: #616161;
+}
