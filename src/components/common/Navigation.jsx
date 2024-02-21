@@ -149,9 +149,122 @@ const Navigation = () => {
           <div style={{ display: "flex", justifyContent: "space-evenly" }}>
             <div>
               <h2>SHOP BY CATEGORY</h2>
-            </div>
-            <div>
-              <h2>SHOP BY SUB CATEGORY</h2>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0 ,textAlign:"left"}}>
+                <li style={{ margin: "10px 0" }}>
+                  <Link
+                    to={ROUTE.FEATURED_PRODUCTS_SHIRT}
+                    style={{
+                      textDecoration: "none",
+                      color: "#007BFF",
+                      fontWeight: "bold",
+                      display: "inline-block",
+                    
+                      borderRadius: "5px",
+                    
+                      transition: "background-color 0.3s ease",
+                      width: 100,
+                      textAlign: "center",
+                    }}
+                  >
+                    Shirt
+                  </Link>
+                </li>
+                <li style={{ margin: "10px 0" }}>
+                  <Link
+                    to={ROUTE.FEATURED_PRODUCTS_SHIRT}
+                    style={{
+                      textDecoration: "none",
+                      color: "#007BFF",
+                      fontWeight: "bold",
+                      display: "inline-block",
+                      
+                      borderRadius: "5px",
+                   
+                      transition: "background-color 0.3s ease",
+                      width: 100,
+                      textAlign: "center",
+                    }}
+                  >
+                    Troser
+                  </Link>
+                </li>
+                <li style={{ margin: "10px 0" }}>
+                  <Link
+                    to={ROUTE.FEATURED_PRODUCTS_SHIRT}
+                    style={{
+                      textDecoration: "none",
+                      color: "#007BFF",
+                      fontWeight: "bold",
+                      display: "inline-block",
+                     
+                      borderRadius: "5px",
+                
+                      transition: "background-color 0.3s ease",
+                      width: 100,
+                      textAlign: "center",
+                    }}
+                  >
+                    Denim
+                  </Link>
+                </li>
+                <li style={{ margin: "10px 0" }}>
+                  <Link
+                    to={ROUTE.FEATURED_PRODUCTS_SHIRT}
+                    style={{
+                      textDecoration: "none",
+                      color: "#007BFF",
+                      fontWeight: "bold",
+                      display: "inline-block",
+                     
+                      borderRadius: "5px",
+                      
+                      transition: "background-color 0.3s ease",
+                      width: 100,
+                      textAlign: "center",
+                    }}
+                  >
+                    Pants
+                  </Link>
+                </li>
+                <li style={{ margin: "10px 0" }}>
+                  <Link
+                    to={ROUTE.FEATURED_PRODUCTS_SHIRT}
+                    style={{
+                      textDecoration: "none",
+                      color: "#007BFF",
+                      fontWeight: "bold",
+                      display: "inline-block",
+
+                      borderRadius: "5px",
+
+                      transition: "background-color 0.3s ease",
+                      width: 100,
+                      textAlign: "center",
+                    }}
+                  >
+                    Formal Pant
+                  </Link>
+                </li>
+                <li style={{ margin: "10px 0" }}>
+                  <Link
+                    to={ROUTE.FEATURED_PRODUCTS_SHIRT}
+                    style={{
+                      textDecoration: "none",
+                      color: "#007BFF",
+                      fontWeight: "bold",
+                      display: "inline-block",
+
+                      borderRadius: "5px",
+
+                      transition: "background-color 0.3s ease",
+                      width: 100,
+                      textAlign: "center",
+                    }}
+                  >
+                   Jeans
+                  </Link>
+                </li>
+              </ul>
             </div>
             <div
               style={{
@@ -160,11 +273,13 @@ const Navigation = () => {
               }}
             >
               <img
-                style={{
-                  height: 300,
+                 style={{
+                  height: 275,
                   padding: 10,
+                  marginTop: 20,
+                  borderRadius: 15,
                 }}
-                src="https://th.bing.com/th/id/OIP.1Da7pJJda2K1V1vJtBQ5qAHaLH?rs=1&pid=ImgDetMain"
+                src="https://1.bp.blogspot.com/-NPcFaO6wlHc/Xa9Hm_FuLWI/AAAAAAAARqs/sAlgNYYiFCUOIzWDQPNh9yj9tQGnxvsOwCLcBGAsYHQ/s1600/7c982d7425f4a8766e07435b19e6c5c5.jpg"
               ></img>
             </div>
             <div
@@ -175,10 +290,12 @@ const Navigation = () => {
             >
               <img
                 style={{
-                  height: 300,
+                  height: 275,
                   padding: 10,
+                  marginTop: 20,
+                  borderRadius: 15,
                 }}
-                src="https://th.bing.com/th/id/OIP.1Da7pJJda2K1V1vJtBQ5qAHaLH?rs=1&pid=ImgDetMain"
+                src="https://i.pinimg.com/originals/22/ec/4d/22ec4dab31b02c8ac335121ed896bbdb.jpg"
               ></img>
             </div>
           </div>
@@ -202,9 +319,122 @@ const Navigation = () => {
           <div style={{ display: "flex", justifyContent: "space-evenly" }}>
             <div>
               <h2>SHOP BY CATEGORY</h2>
-            </div>
-            <div>
-              <h2>SHOP BY SUB CATEGORY</h2>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0 ,textAlign:"left"}}>
+                <li style={{ margin: "10px 0" }}>
+                  <Link
+                    to={ROUTE.FEATURED_PRODUCTS_SHIRT}
+                    style={{
+                      textDecoration: "none",
+                      color: "#007BFF",
+                      fontWeight: "bold",
+                      display: "inline-block",
+                    
+                      borderRadius: "5px",
+                    
+                      transition: "background-color 0.3s ease",
+                      width: 100,
+                      textAlign: "center",
+                    }}
+                  >
+                    Kurti
+                  </Link>
+                </li>
+                <li style={{ margin: "10px 0" }}>
+                  <Link
+                    to={ROUTE.FEATURED_PRODUCTS_SHIRT}
+                    style={{
+                      textDecoration: "none",
+                      color: "#007BFF",
+                      fontWeight: "bold",
+                      display: "inline-block",
+                      
+                      borderRadius: "5px",
+                   
+                      transition: "background-color 0.3s ease",
+                      width: 100,
+                      textAlign: "center",
+                    }}
+                  >
+                    denim
+                  </Link>
+                </li>
+                <li style={{ margin: "10px 0" }}>
+                  <Link
+                    to={ROUTE.FEATURED_PRODUCTS_SHIRT}
+                    style={{
+                      textDecoration: "none",
+                      color: "#007BFF",
+                      fontWeight: "bold",
+                      display: "inline-block",
+                     
+                      borderRadius: "5px",
+                
+                      transition: "background-color 0.3s ease",
+                      width: 100,
+                      textAlign: "center",
+                    }}
+                  >
+                    Ladies Top
+                  </Link>
+                </li>
+                <li style={{ margin: "10px 0" }}>
+                  <Link
+                    to={ROUTE.FEATURED_PRODUCTS_SHIRT}
+                    style={{
+                      textDecoration: "none",
+                      color: "#007BFF",
+                      fontWeight: "bold",
+                      display: "inline-block",
+                     
+                      borderRadius: "5px",
+                      
+                      transition: "background-color 0.3s ease",
+                      width: 100,
+                      textAlign: "center",
+                    }}
+                  >
+                    Jacket
+                  </Link>
+                </li>
+                <li style={{ margin: "10px 0" }}>
+                  <Link
+                    to={ROUTE.FEATURED_PRODUCTS_SHIRT}
+                    style={{
+                      textDecoration: "none",
+                      color: "#007BFF",
+                      fontWeight: "bold",
+                      display: "inline-block",
+
+                      borderRadius: "5px",
+
+                      transition: "background-color 0.3s ease",
+                      width: 100,
+                      textAlign: "center",
+                    }}
+                  >
+                    Formal Pant
+                  </Link>
+                </li>
+                <li style={{ margin: "10px 0" }}>
+                  <Link
+                    to={ROUTE.FEATURED_PRODUCTS_SHIRT}
+                    style={{
+                      textDecoration: "none",
+                      color: "#007BFF",
+                      fontWeight: "bold",
+                      display: "inline-block",
+
+                      borderRadius: "5px",
+
+                      transition: "background-color 0.3s ease",
+                      width: 100,
+                      textAlign: "center",
+                    }}
+                  >
+                   Jeans
+                  </Link>
+                </li>
+              </ul>
             </div>
             <div
               style={{
@@ -214,8 +444,10 @@ const Navigation = () => {
             >
               <img
                 style={{
-                  height: 300,
+                  height: 275,
                   padding: 10,
+                  marginTop: 20,
+                  borderRadius: 15,
                 }}
                 src="https://th.bing.com/th/id/OIP.ciquOhtTTgmcBZ71ExrKbgHaIi?rs=1&pid=ImgDetMain"
               ></img>
@@ -228,10 +460,12 @@ const Navigation = () => {
             >
               <img
                 style={{
-                  height: 300,
+                  height: 275,
                   padding: 10,
+                  marginTop: 20,
+                  borderRadius: 15,
                 }}
-                src="https://th.bing.com/th/id/OIP.ciquOhtTTgmcBZ71ExrKbgHaIi?rs=1&pid=ImgDetMain"
+                src="https://th.bing.com/th/id/OIP.EfWDI6caEo6McuWOqpDw-AHaIf?&rs=1&pid=ImgDetMain"
               ></img>
             </div>
           </div>
@@ -240,7 +474,11 @@ const Navigation = () => {
 
       {(pathname === ROUTE.SHOP || pathname === ROUTE.SEARCH) && (
         <FiltersToggle>
-          <button className="button-muted button-small" type="button" style={{margin: '1rem'}}>
+          <button
+            className="button-muted button-small"
+            type="button"
+            style={{ margin: "1rem" }}
+          >
             Filters &nbsp;
             <FilterOutlined />
           </button>

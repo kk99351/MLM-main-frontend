@@ -1,0 +1,64 @@
+/* StaticCard.css */
+
+.static-card-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+.static-card {
+  display: flex;
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  background-color: rgb(229, 225, 233);
+  border-radius: 5px;
+  overflow: hidden; /* Ensure the image doesn't overflow */
+  margin-bottom: 20px; /* Add margin for spacing */
+}
+
+.card-content {
+  display: flex;
+ 
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image {
+  height: 100%;
+  width: auto;
+  max-width: 50%; /* Adjust the width of the image as needed */
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+.text-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.text-content h5 {
+  margin: 0;
+  font-weight: 800;
+  margin-bottom: -10px; /* Adjust the bottom margin for spacing */
+}
+
+@media (max-width: 768px) {
+  .static-card-container {
+    flex-direction: column; /* Stack cards vertically on small screens */
+    align-items: center;
+  }
+
+  .static-card {
+    max-width: none; /* Remove the max-width restriction */
+  }
+
+  .card-content{
+    display: block;
+  }
+
+  .card-image {
+    width: 100%; /* Allow the image to take full width on small screens */
+    max-width: none; /* Remove the max-width restriction */
+  }
+}

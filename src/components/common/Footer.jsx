@@ -4,11 +4,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 
 const Footer = () => {
-  const { pathname } = useLocation();
-
-  const visibleOnlyPath = [Route.HOME, Route.SHOP];
-
-  return !visibleOnlyPath.includes(pathname) ? null : (
+  return (
     <footer
       style={{
         background: "#ebe7e4",
@@ -37,19 +33,19 @@ const Footer = () => {
           <div style={footerColStyle}>
             <h2 style={footerHeadingStyle}>Extra</h2>
             <div>
-              <a href="" style={linkStyle}>
+              <a href="/home/Faq" style={linkStyle}>
                 Brands
               </a>
-              <a href="" style={linkStyle}>
+              <a href="/home/Gift" style={linkStyle}>
                 Gift Certificates
               </a>
-              <a href="" style={linkStyle}>
+              <a href="/home/Affiliate" style={linkStyle}>
                 Affiliates
               </a>
-              <a href="" style={linkStyle}>
+              <a href="/home/special" style={linkStyle}>
                 Special
               </a>
-              <a href="" style={linkStyle}>
+              <a href="/home/sitemap" style={linkStyle}>
                 Sitemap
               </a>
             </div>
@@ -66,7 +62,7 @@ const Footer = () => {
               <a href="" style={linkStyle}>
                 Wish List
               </a>
-              <a href="" style={linkStyle}>
+              <a href="/home/news" style={linkStyle}>
                 Newsletter
               </a>
             </div>
@@ -74,22 +70,22 @@ const Footer = () => {
           <div style={footerColStyle}>
             <h2 style={footerHeadingStyle}>Information</h2>
             <div>
-              <a href="" style={linkStyle}>
+              <a href="/home/about" style={linkStyle}>
                 About Us
               </a>
-              <a href="" style={linkStyle}>
+              <a href="/home/delivery" style={linkStyle}>
                 Delivery Information
               </a>
-              <a href="" style={linkStyle}>
+              <a href="/home/return" style={linkStyle}>
                 Return, Refund & Cancellation Policy
               </a>
-              <a href="" style={linkStyle}>
+              <a href="/home/privacy" style={linkStyle}>
                 Privacy Policy
               </a>
-              <a href="" style={linkStyle}>
+              <a href="/home/terms" style={linkStyle}>
                 Terms & Conditions
               </a>
-              <a href="" style={linkStyle}>
+              <a href="/home/brand" style={linkStyle}>
                 FAQs
               </a>
             </div>
@@ -97,7 +93,7 @@ const Footer = () => {
           <div style={footerColStyle}>
             <h2 style={footerHeadingStyle}>Store Information</h2>
             <div>
-              <p style={{marginBottom: "10px" }}>
+              <p style={{ marginBottom: "10px" }}>
                 Likeaura Market Private Limited HN-372, Ward No-3, Near Patwar
                 Bhawan, Vila GE-Maujgarh, Sirsa, Sirsa-125104, Haryana{" "}
               </p>

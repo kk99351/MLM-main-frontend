@@ -1,0 +1,48 @@
+/* custom.css */
+
+.faq-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.faq-answer {
+  display: none;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.faq-question span {
+  font-size: 18px;
+}
+
+.faq-question .arrow::before {
+  content: '\25BC'; /* Unicode character for a downward-pointing triangle */
+  font-family: 'FontAwesome'; /* Assuming you are using FontAwesome */
+  margin-left: 10px;
+  font-size: 20px; /* Icon size */
+}
+
+.faq-question:hover {
+  background-color: #f0f0f0;
+}
+
+.faq-answer p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
