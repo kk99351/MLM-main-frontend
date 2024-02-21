@@ -18,6 +18,7 @@ const CustomMobileInput = (props) => {
       value
     };
 
+
     setValue(mob);
   };
 
@@ -30,15 +31,18 @@ const CustomMobileInput = (props) => {
       )}
       <PhoneInput
         name={field.name}
-        country="ph"
+        country="in"
         inputClass="input-form d-block"
         style={{
           border: touched && error ? '1px solid red' : '1px solid #cacaca'
         }}
+        inputProps={{
+          name:  'value'
+        }}
         inputExtraProps={{ required: true }}
         onChange={handleChange}
         placeholder={placeholder}
-        value={defaultValue.value}
+        value={defaultValue.val}
       />
     </div>
   );

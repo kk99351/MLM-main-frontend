@@ -18,12 +18,14 @@ const ViewProduct = () => {
   const { id } = useParams();
   const { product, isLoading, error } = useProduct(id);
   const { addToBasket, isItemOnBasket } = useBasket(id);
+
   useScrollTop();
   useDocumentTitle(`View ${product?.name || "Item"}`);
 
-  const [selectedImage, setSelectedImage] = useState(product?.image || "");
+  const [selectedImage, setSelectedImage] = useState(product?.thumbUrl || "");
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
+  const [selectedQuantity, setSelectedQuantity] = useState("");
 
   const {
     recommendedProducts,
@@ -34,8 +36,12 @@ const ViewProduct = () => {
   const colorOverlay = useRef(null);
 
   useEffect(() => {
-    setSelectedImage(product?.image);
+    setSelectedImage(product?.thumbUrl);
   }, [product]);
+
+  const onSelectedQuantityChange = (newValue) => {
+    setSelectedQuantity(newValue.value);
+  };
 
   const onSelectedSizeChange = (newValue) => {
     setSelectedSize(newValue.value);
@@ -53,6 +59,7 @@ const ViewProduct = () => {
       ...product,
       selectedColor,
       selectedSize: selectedSize || product.sizes[0],
+      quantity: selectedQuantity || 1
     });
   };
 
@@ -75,18 +82,18 @@ const ViewProduct = () => {
             </h3>
           </Link>
           <div className="product-modal">
-            {product.imageCollection.length !== 0 && (
+            {product.collectionUrls.length !== 0 && (
               <div className="product-modal-image-collection">
-                {product.imageCollection.map((image) => (
+                {product.collectionUrls.map((image,index) => (
                   <div
                     className="product-modal-image-collection-wrapper"
-                    key={image.id}
-                    onClick={() => setSelectedImage(image.url)}
+                    key={index}
+                    onClick={() => setSelectedImage(image)}
                     role="presentation"
                   >
                     <ImageLoader
                       className="product-modal-image-collection-img"
-                      src={image.url}
+                      src={image}
                     />
                   </div>
                 ))}
@@ -137,7 +144,7 @@ const ViewProduct = () => {
                 <Select
                   placeholder="--Select Quantity--"
                   onChange={onSelectedSizeChange}
-                  options={Array.from({ length: 5 }, (_, index) => ({
+                  options={Array.from({ length: product.countInStock }, (_, index) => ({
                     label: `${index + 1} `,
                     value: index,
                   }))}

@@ -50,8 +50,11 @@ const EditProfile = () => {
   const initFormikValues = {
     fullname: profile.fullname || '',
     email: profile.email || '',
-    address: profile.address || '',
-    mobile: profile.mobile || {}
+    streetLine: profile.address.streetLine1+' '+profile.address.streetLine2 || '',
+    city: profile.address.city || '',
+    state: profile.address.state || '',
+    pincode: profile.address.pinCode || '',
+    mobile: profile.mobile || ''
   };
 
   const {
@@ -65,7 +68,10 @@ const EditProfile = () => {
       updates: {
         fullname: form.fullname,
         email: form.email,
-        address: form.address,
+        streetLine: form.streetLine,
+        city: form.city,
+        state: form.state,
+        pincode: form.pinCode,
         mobile: form.mobile,
         avatar: profile.avatar,
         banner: profile.banner

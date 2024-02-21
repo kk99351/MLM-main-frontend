@@ -28,13 +28,6 @@ const UserProfile = (props) => {
               src={profile.avatar}
             />
           </div>
-          <button
-            className="button button-small user-profile-edit"
-            onClick={() => props.history.push(ACCOUNT_EDIT)}
-            type="button"
-          >
-            Edit Account
-          </button>
         </div>
         <div className="user-profile-details">
           <h2 className="user-profile-name">{profile.fullname}</h2>
@@ -44,14 +37,19 @@ const UserProfile = (props) => {
           <span>Address</span>
           <br />
           {profile.address ? (
-            <h5>{profile.address}</h5>
+            <>
+            <h5>StreetLine: {profile.address.streetLine1} {profile.address.streetLine2}</h5>
+            <h5>City: {profile.address.city}</h5>
+            <h5>Pincode: {profile.address.pinCode}</h5>
+            <h5>State: {profile.address.state}</h5>
+            </>
           ) : (
             <h5 className="text-subtle text-italic">Address not set</h5>
           )}
           <span>Mobile</span>
           <br />
           {profile.mobile ? (
-            <h5>{profile.mobile.value}</h5>
+            <h5>{profile.mobile}</h5>
           ) : (
             <h5 className="text-subtle text-italic">Mobile not set</h5>
           )}

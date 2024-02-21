@@ -1,4 +1,3 @@
-export { default as EditAccount } from './account/edit_account';
 export { default as UserAccount } from './account/user_account';
 export { default as AddProduct } from './admin/add_product';
 export { default as Dashboard } from './admin/dashboard';

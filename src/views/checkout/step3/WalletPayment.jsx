@@ -2,9 +2,8 @@
 import { useFormikContext } from 'formik';
 import React from 'react';
 
-const WalletPayment = () => {
+const WalletPayment = ({walletBalance}) => {
   const { values, setValues } = useFormikContext();
-
   return (
     <div className={`checkout-fieldset-collapse ${values.type === 'wallet' ? 'is-selected-payment' : ''}`}>
       <div className="checkout-field margin-0">
@@ -27,7 +26,7 @@ const WalletPayment = () => {
             <div className="d-flex-grow-1 margin-left-s">
               <h4 className="margin-0">Wallet</h4>
               <span className="text-subtle d-block margin-top-s">
-                Available Balance: $240.00.
+                Available Balance: ${walletBalance}.
               </span>
             </div>
             <div className="payment-img payment-img-wallet" />

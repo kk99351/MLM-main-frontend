@@ -20,6 +20,7 @@ import {
   removeProductSuccess,
   searchProductSuccess
 } from '../actions/productActions';
+import { getProductCount, getProducts } from '@/services/API/Products';
 
 function* initRequest() {
   yield put(setLoading(true));
@@ -43,20 +44,43 @@ function* productSaga({ type, payload }) {
       try {
         yield initRequest();
         const state = yield select();
-        const result = yield call(firebase.getProducts, payload);
-
-        if (result.products.length === 0) {
-          handleError('No items found.');
-        } else {
+        const productResponse = yield call(getProducts, payload)
+        const countResponse = yield call(getProductCount)
+        if (productResponse.status === false){
+          throw Error(productResponse.msg )
+        }
+        else if (countResponse.status === false){
+          throw Error(countResponse.msg )
+        }
+        if (productResponse.data.products.length === 0){
+          handleError('No items found.')
+        }else{
           yield put(getProductsSuccess({
-            products: result.products,
-            lastKey: result.lastKey ? result.lastKey : state.products.lastRefKey,
-            total: result.total ? result.total : state.products.total
+            products: productResponse.data.products,
+            lastKey: productResponse.data.lastKey ? productResponse.data.lastKey : state.products.lastRefKey,
+            total: countResponse.data.productCount ? countResponse.data.productCount : state.products.total
           }));
+          console.log({
+            products: productResponse.data.products,
+            lastKey: productResponse.data.lastKey ? productResponse.data.lastKey : state.products.lastRefKey,
+            total: countResponse.data.productCount ? countResponse.data.productCount : state.products.total
+          })
           yield put(setRequestStatus(''));
         }
-        // yield put({ type: SET_LAST_REF_KEY, payload: result.lastKey });
         yield put(setLoading(false));
+        // const result = yield call(firebase.getProducts, payload);
+        // if (result.products.length === 0) {
+        //   handleError('No items found.');
+        // } else {
+        //   yield put(getProductsSuccess({
+        //     products: result.products,
+        //     lastKey: result.lastKey ? result.lastKey : state.products.lastRefKey,
+        //     total: result.total ? result.total : state.products.total
+        //   }));
+        //   yield put(setRequestStatus(''));
+        // }
+        // // yield put({ type: SET_LAST_REF_KEY, payload: result.lastKey });
+        // yield put(setLoading(false));
       } catch (e) {
         console.log(e);
         yield handleError(e);

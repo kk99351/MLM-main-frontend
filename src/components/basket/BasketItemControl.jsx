@@ -8,13 +8,13 @@ const BasketItemControl = ({ product }) => {
   const dispatch = useDispatch();
 
   const onAddQty = () => {
-    if (product.quantity < product.maxQuantity) {
+    if (product.quantity < product.countInStock) {
       dispatch(addQtyItem(product.id));
     }
   };
 
   const onMinusQty = () => {
-    if ((product.maxQuantity >= product.quantity) && product.quantity !== 0) {
+    if ((product.countInStock >= product.quantity) && product.quantity !== 0) {
       dispatch(minusQtyItem(product.id));
     }
   };
@@ -23,7 +23,7 @@ const BasketItemControl = ({ product }) => {
     <div className="basket-item-control">
       <button
         className="button button-border button-border-gray button-small basket-control basket-control-add"
-        disabled={product.maxQuantity === product.quantity}
+        disabled={product.countInStock === product.quantity}
         onClick={onAddQty}
         type="button"
       >
@@ -48,7 +48,7 @@ BasketItemControl.propTypes = {
     brand: PropType.string,
     price: PropType.number,
     quantity: PropType.number,
-    maxQuantity: PropType.number,
+    countInStock: PropType.number,
     description: PropType.string,
     keywords: PropType.arrayOf(PropType.string),
     selectedSize: PropType.string,

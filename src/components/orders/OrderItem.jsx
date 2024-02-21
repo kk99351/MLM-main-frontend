@@ -1,20 +1,13 @@
 import { CloseOutlined } from '@ant-design/icons';
-import { BasketItemControl } from '@/components/basket';
 import { ImageLoader } from '@/components/common';
 import { displayMoney } from '@/helpers/utils';
 import PropType from 'prop-types';
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { removeFromBasket } from '@/redux/actions/basketActions';
 
-const BasketItem = ({ product }) => {
-  const dispatch = useDispatch();
-  const onRemoveFromBasket = () => dispatch(removeFromBasket(product.id));
-
+const OrderItem = ({ product }) => {
   return (
-    <div className="basket-item">
-      <BasketItemControl product={product} />
+    <div className='order-wrappers'>
       <div className="basket-item-wrapper">
         <div className="basket-item-img-wrapper">
           <ImageLoader
@@ -29,47 +22,33 @@ const BasketItem = ({ product }) => {
               {product.name}
             </h4>
           </Link>
-          <div className="basket-item-specs">
+          <div className="basket-item-specs order-item-specs">
             <div>
-              <span className="spec-title">Quantity</span>
-              <h5 className="my-0">{product.quantity}</h5>
+              <span className="spec-title">Quantity: {product.quantity}</span>
             </div>
             <div>
-              <span className="spec-title">Size</span>
-              <h5 className="my-0">
-                {product.selectedSize}
-                {' '}
-                mm
-              </h5>
+              <span className="spec-title">Size: {product.selectedSize}{' '}mm</span>
             </div>
             <div>
-              <span className="spec-title">Color</span>
-              <div style={{
+              <span className="spec-title" style={{
                 backgroundColor: product.selectedColor || product.availableColors[0],
                 width: '15px',
                 height: '15px',
                 borderRadius: '50%'
-              }}
-              />
+              }}></span>
+            </div>
+
+            <div>
+              <span className="spec-title">Price: {displayMoney(product.price * product.quantity)}</span>
             </div>
           </div>
         </div>
-        <div className="basket-item-price">
-          <h4 className="my-0">{displayMoney(product.price * product.quantity)}</h4>
-        </div>
-        <button
-          className="basket-item-remove button button-border button-border-gray button-small"
-          onClick={onRemoveFromBasket}
-          type="button"
-        >
-          <CloseOutlined />
-        </button>
       </div>
     </div>
   );
 };
 
-BasketItem.propTypes = {
+OrderItem.propTypes = {
   product: PropType.shape({
     id: PropType.string,
     name: PropType.string,
@@ -79,7 +58,7 @@ BasketItem.propTypes = {
     countInStock: PropType.number,
     description: PropType.string,
     keywords: PropType.arrayOf(PropType.string),
-    selectedSize: PropType.string,
+    selectedSize: PropType.number,
     selectedColor: PropType.string,
     imageCollection: PropType.arrayOf(PropType.string),
     sizes: PropType.arrayOf(PropType.number),
@@ -91,4 +70,4 @@ BasketItem.propTypes = {
   }).isRequired
 };
 
-export default BasketItem;
+export default OrderItem;

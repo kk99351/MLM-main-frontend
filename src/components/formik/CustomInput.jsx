@@ -13,7 +13,7 @@ const CustomInput = ({
       <label className="label-input" htmlFor={field.name}>{label}</label>
     )}
     <input
-      type="text"
+      type="number"
       id={field.name}
       className={`input-form ${touched[field.name] && errors[field.name] && 'input-error'}`}
       ref={inputRef}

@@ -1,7 +1,9 @@
 import {
   IS_AUTHENTICATING, LOADING,
   SET_AUTH_STATUS,
-  SET_REQUEST_STATUS
+  SET_REQUEST_STATUS,
+  SET_ORDERS,
+  SET_WALLET_BALANCE
 } from '@/constants/constants';
 
 const initState = {
@@ -9,6 +11,8 @@ const initState = {
   isAuthenticating: false,
   authStatus: null,
   requestStatus: null,
+  walletBalance: null,
+  orders: [],
   theme: 'light'
 };
 
@@ -33,6 +37,16 @@ export default (state = initState, action) => {
       return {
         ...state,
         authStatus: action.payload
+      };
+    case SET_WALLET_BALANCE:
+      return {
+        ...state,
+        walletBalance: action.payload
+      };
+    case SET_ORDERS:
+      return {
+        ...state,
+        orders: action.payload
       };
     default:
       return state;
