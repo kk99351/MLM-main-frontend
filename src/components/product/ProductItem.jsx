@@ -39,11 +39,11 @@ const ProductItem = ({ product, isItemOnBasket, addToBasket }) => {
           role="presentation"
         >
           <div className="product-card-img-wrapper">
-            {product.image ? (
+            {product.thumbUrl ? (
               <ImageLoader
                 alt={product.name}
                 className="product-card-img"
-                src={product.image}
+                src={product.thumbUrl}
               />
             ) : <Skeleton width="100%" height="90%" />}
           </div>

@@ -23,7 +23,6 @@ const PublicRoute = ({
       if ((isAuth && role === 'USER') && (path === SIGNIN || path === SIGNUP)) {
         return <Redirect to={from} />;
       }
-
       return (
         <main className="content">
           <Component {...props} />

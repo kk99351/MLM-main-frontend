@@ -24,8 +24,14 @@ const FormSchema = Yup.object().shape({
   email: Yup.string()
     .email('Email is not valid.')
     .required('Email is required.'),
-  address: Yup.string()
-    .required('Shipping address is required.'),
+  streetLine: Yup.string()
+  .required('StreetLine is required.'),
+  city: Yup.string()
+  .required('City is required.'),
+  state: Yup.string()
+  .required('State is required.'),
+  pincode: Yup.string()
+  .required('Pincode is required.'),
   mobile: Yup.object()
     .shape({
       country: Yup.string(),
@@ -47,18 +53,30 @@ const ShippingDetails = ({ profile, shipping, subtotal }) => {
   const initFormikValues = {
     fullname: shipping.fullname || profile.fullname || '',
     email: shipping.email || profile.email || '',
-    address: shipping.address || profile.address || '',
-    mobile: shipping.mobile || profile.mobile || {},
+    streetLine: shipping.streetLine || profile.address.streetLine1+' '+profile.address.streetLine2 || '',
+    city: shipping.city || profile.address.city || '',
+    state: shipping.state || profile.address.state || '',
+    pincode: shipping.pincode || profile.address.pinCode || '',
+    mobile: {
+      // country: "India",
+      // countryCode: "in",
+      // dialCode: "91",
+      // value: shipping.mobile || profile.mobile || ''
+    },
     isInternational: shipping.isInternational || false,
     isDone: shipping.isDone || false
   };
+
 
   const onSubmitForm = (form) => {
     dispatch(setShippingDetails({
       fullname: form.fullname,
       email: form.email,
-      address: form.address,
-      mobile: form.mobile,
+      streetLine: form.streetLine,
+      city: form.city,
+      state: form.state,
+      pincode: form.pincode,
+      mobile: form.mobile.value,
       isInternational: form.isInternational,
       isDone: true
     }));
@@ -118,14 +136,17 @@ ShippingDetails.propTypes = {
   profile: PropType.shape({
     fullname: PropType.string,
     email: PropType.string,
-    address: PropType.string,
-    mobile: PropType.object
+    address: PropType.object,
+    mobile: PropType.string
   }).isRequired,
   shipping: PropType.shape({
     fullname: PropType.string,
     email: PropType.string,
-    address: PropType.string,
-    mobile: PropType.object,
+    steetLine: PropType.string,
+    city: PropType.string,
+    state: PropType.string,
+    pincode: PropType.string,
+    mobile: PropType.string,
     isInternational: PropType.bool,
     isDone: PropType.bool
   }).isRequired

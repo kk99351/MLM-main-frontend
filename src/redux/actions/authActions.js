@@ -1,12 +1,27 @@
 import * as type from '@/constants/constants';
 
-export const signIn = (email, password) => ({
+export const signIn = (mobile, otp, orderId) => ({
   type: type.SIGNIN,
   payload: {
-    email,
-    password
+    mobile,
+    otp,
+    orderId
   }
 });
+
+export const sendOTP = (mobile) => ({
+  type: type.SEND_OTP,
+  payload: {
+    mobile
+  }
+})
+
+export const resendOTP = (orderId) => ({
+  type: type.RESEND_OTP,
+  payload: {
+    orderId
+  }
+})
 
 export const signInWithGoogle = () => ({
   type: type.SIGNIN_WITH_GOOGLE

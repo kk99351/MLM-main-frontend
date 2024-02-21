@@ -2,18 +2,20 @@ import { Basket } from '@/components/basket';
 import { Footer, Navigation } from '@/components/common';
 import * as ROUTES from '@/constants/routes';
 import { createBrowserHistory } from 'history';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Router, Switch } from 'react-router-dom';
 import * as view from '@/views';
 import AdminRoute from './AdminRoute';
 import ClientRoute from './ClientRoute';
 import PublicRoute from './PublicRoute';
+import { useSelector } from 'react-redux';
 
 // Revert back to history v4.10.0 because
 // v5.0 breaks navigation
 export const history = createBrowserHistory();
 
-const AppRouter = () => (
+const AppRouter = () => {
+  return (
   <Router history={history}>
     <>
       <Navigation />
@@ -45,10 +47,6 @@ const AppRouter = () => (
           path={ROUTES.RECOMMENDED_PRODUCTS}
         />
         <PublicRoute
-          component={view.SignUp}
-          path={ROUTES.SIGNUP}
-        />
-        <PublicRoute
           component={view.SignIn}
           exact
           path={ROUTES.SIGNIN}
@@ -65,11 +63,6 @@ const AppRouter = () => (
           component={view.UserAccount}
           exact
           path={ROUTES.ACCOUNT}
-        />
-        <ClientRoute
-          component={view.EditAccount}
-          exact
-          path={ROUTES.ACCOUNT_EDIT}
         />
         <ClientRoute
           component={view.CheckOutStep1}
@@ -105,6 +98,6 @@ const AppRouter = () => (
       <Footer />
     </>
   </Router>
-);
+)};
 
 export default AppRouter;

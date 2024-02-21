@@ -272,7 +272,7 @@ const Navigation = () => {
           </li>
         ) : (
           <li className="navigation-action">
-            {pathname !== ROUTE.SIGNUP && (
+            {/* {pathname !== ROUTE.SIGNUP && (
               <Link
                 className="button button-small"
                 onClick={onClickLink}
@@ -280,7 +280,7 @@ const Navigation = () => {
               >
                 Sign Up
               </Link>
-            )}
+            )} */}
             {pathname !== ROUTE.SIGNIN && (
               <Link
                 className="button button-small button-muted margin-left-s"

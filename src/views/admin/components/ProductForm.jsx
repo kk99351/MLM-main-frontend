@@ -32,7 +32,7 @@ const FormSchema = Yup.object().shape({
     .required('Price is required.'),
   description: Yup.string()
     .required('Description is required.'),
-  maxQuantity: Yup.number()
+  countInStock: Yup.number()
     .positive('Max quantity is invalid.')
     .integer('Max quantity should be an integer.')
     .required('Max quantity is required.'),
@@ -54,7 +54,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
     name: product?.name || '',
     brand: product?.brand || '',
     price: product?.price || 0,
-    maxQuantity: product?.maxQuantity || 0,
+    countInStock: product?.countInStock || 0,
     description: product?.description || '',
     keywords: product?.keywords || [],
     sizes: product?.sizes || [],
@@ -71,7 +71,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
   } = useFileHandler({ image: {}, imageCollection: product?.imageCollection || [] });
 
   const onSubmitForm = (form) => {
-    if (imageFile.image.file || product.imageUrl) {
+    if (imageFile.image.file || product.thumbUrlUrl) {
       onSubmit({
         ...form,
         quantity: 1,
@@ -79,7 +79,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
         // of name here instead in firebase functions
         name_lower: form.name.toLowerCase(),
         dateAdded: new Date().getTime(),
-        image: imageFile?.image?.file || product.imageUrl,
+        image: imageFile?.image?.file || product.thumbUrlUrl,
         imageCollection: imageFile.imageCollection
       });
     } else {
@@ -149,9 +149,9 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                 <div className="product-form-field">
                   <Field
                     disabled={isLoading}
-                    name="maxQuantity"
+                    name="countInStock"
                     type="number"
-                    id="maxQuantity"
+                    id="countInStock"
                     label="* Max Quantity"
                     component={CustomInput}
                   />
@@ -297,11 +297,11 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                 )}
               </div>
               <div className="product-form-image-wrapper">
-                {(imageFile.image.url || product.image) && (
+                {(imageFile.image.url || product.thumbUrl) && (
                   <ImageLoader
                     alt=""
                     className="product-form-image-preview"
-                    src={imageFile.image.url || product.image}
+                    src={imageFile.image.url || product.thumbUrl}
                   />
                 )}
               </div>
@@ -318,7 +318,7 @@ ProductForm.propTypes = {
     name: PropType.string,
     brand: PropType.string,
     price: PropType.number,
-    maxQuantity: PropType.number,
+    countInStock: PropType.number,
     description: PropType.string,
     keywords: PropType.arrayOf(PropType.string),
     imageCollection: PropType.arrayOf(PropType.object),

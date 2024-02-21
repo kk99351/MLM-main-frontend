@@ -13,7 +13,10 @@ export default (state = initState, action) => {
       return {
         id: action.payload.id,
         role: action.payload.role,
-        provider: action.payload.provider
+        email: action.payload.email,
+        mobile: action.payload.mobile,
+        isAdmin: action.payload.isAdmin,
+        token: action.payload.token,
       };
     case SIGNOUT_SUCCESS:
       return null;

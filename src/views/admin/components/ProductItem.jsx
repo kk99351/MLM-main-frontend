@@ -42,11 +42,12 @@ const ProductItem = ({ product }) => {
       >
         <div className="grid grid-count-6">
           <div className="grid-col item-img-wrapper">
-            {product.image ? (
+            {product.thumbUrl ? (
               <ImageLoader
                 alt={product.name}
                 className="item-img"
-                src={product.image}
+                src={product.thumbUrl
+                }
               />
             ) : <Skeleton width={50} height={30} />}
           </div>
@@ -65,7 +66,7 @@ const ProductItem = ({ product }) => {
             </span>
           </div>
           <div className="grid-col">
-            <span>{product.maxQuantity || <Skeleton width={20} />}</span>
+            <span>{product.countInStock || <Skeleton width={20} />}</span>
           </div>
         </div>
         {product.id && (
@@ -116,12 +117,12 @@ ProductItem.propTypes = {
     name: PropType.string,
     brand: PropType.string,
     price: PropType.number,
-    maxQuantity: PropType.number,
+    countInStock: PropType.number,
     description: PropType.string,
     keywords: PropType.arrayOf(PropType.string),
     imageCollection: PropType.arrayOf(PropType.object),
     sizes: PropType.arrayOf(PropType.string),
-    image: PropType.string,
+    thumbUrl: PropType.string,
     imageUrl: PropType.string,
     isFeatured: PropType.bool,
     isRecommended: PropType.bool,

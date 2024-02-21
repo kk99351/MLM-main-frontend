@@ -51,6 +51,28 @@
   grid-template-columns: 100px 1fr 80px 40px;
 }
 
+.basket-item-flex{
+  display: block;
+}
+.order-item-specs{
+  flex-wrap: wrap;
+  display: flex !important;
+  gap: 1rem;
+}
+.order-address{
+  font-size: 1.4rem;
+}
+.order-status{
+  font-size: 1.6rem;
+  background-color: #f27120;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.order-price{
+  font-size: 1.6rem;
+  padding: 1rem;
+}
 .basket-item-specs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -61,6 +83,11 @@
     display: block;
     margin-bottom: 5px;
   }
+}
+
+.order-wrappers{
+  border-radius: 1rem;
+  margin: 0.5rem;
 }
 
 .basket-empty {
