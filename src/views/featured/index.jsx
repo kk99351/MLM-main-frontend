@@ -23,7 +23,10 @@ const FeaturedProducts = () => {
             <img src={bannerImg} alt="" />
           </div>
         </div>
+        <div>
         <Productcard></Productcard>
+        </div>
+       
         <div className="display">
           <div className="product-display-grid">
             {error && !isLoading ? (
@@ -39,6 +42,10 @@ const FeaturedProducts = () => {
               />
             )}
           </div>
+        </div>
+
+        <div>
+        <Productcard></Productcard>
         </div>
       </div>
     </main>

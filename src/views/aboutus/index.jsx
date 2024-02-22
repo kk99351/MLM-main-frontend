@@ -99,7 +99,7 @@ const About = () => {
               alt=""
             />
             <div>
-            <h1>GOALS</h1>
+              <h1>GOALS</h1>
               <p
                 style={{
                   marginTop: 50,
@@ -120,8 +120,6 @@ const About = () => {
               </p>
             </div>
           </div>
-
-         
         </div>
       </div>
     </main>

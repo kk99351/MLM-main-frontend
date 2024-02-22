@@ -21,9 +21,7 @@ const Faq = () => {
           </div>
         </div>
         <div style={{ width: "100%", marginTop: 40 }}>
-          <div
-           className="brands"
-          >
+          <div className="brands">
             <img
               style={{
                 height: 300,
